@@ -7,6 +7,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import HomePage from "./componennts/HomePage.jsx";
+import Quiz from "./componennts/Quiz.jsx";
 function App() {
   
 
@@ -14,6 +15,8 @@ function App() {
     createRoutesFromElements(
       <Route path="/">
         <Route index element={<HomePage />} />
+        <Route path="quiz" element={<Quiz/>}/>
+        
         
       </Route>
     )
