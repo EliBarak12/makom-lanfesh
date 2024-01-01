@@ -36,7 +36,9 @@ useEffect(()=>{
                 className="w-1/2 rounded-lg shadow-md"
               />
             </div>
+            <div className="mt-40">
             <Support />
+            </div >
           </section>
         </div>
       </main>
