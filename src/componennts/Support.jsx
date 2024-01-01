@@ -28,6 +28,7 @@ const Support = () => {
     justifyContent: "center",
     padding: "18px", // Adjust as needed
     margin: "14px", // Adjust as needed
+   
   };
 
   const buttonTextStyle = {
@@ -38,11 +39,24 @@ const Support = () => {
 
     navigateQuiz("/quiz");
   };
+  const heandleAnswer =()=>{
+    navigateQuiz("/emergency");
+
+  }
+
+  const heandleEmergency =()=>{
+    navigateQuiz("/answer");
+    
+  }
+  const heandleToolBox =()=>{
+    navigateQuiz("/toolbox");
+    
+  }
   return (
-    <div>
+    <div dir="rtl">
     <ul className="flex flex-col items-center justify-center mt-4">
       <li className=" ">
-        <button style={buttonStyle} className="focus:outline-none">
+        <button style={buttonStyle} onClick={heandleAnswer} className="focus:outline-none">
           <img
             src="/helpingHands.svg"
             alt="Compass Icon"
@@ -53,7 +67,7 @@ const Support = () => {
           </span>
         </button>
 
-        <button style={buttonStyle} className="focus:outline-none">
+        <button style={buttonStyle} onClick={heandleEmergency} className="focus:outline-none hover:bg-gray-600">
           <img
             src="/medicalSupport.svg"
             alt="Compass Icon"
@@ -79,7 +93,7 @@ const Support = () => {
             {dataHebrew.getSupport.answerAgainButton}
           </span>
         </button>
-        <button style={buttonStyle} className="focus:outline-none">
+        <button style={buttonStyle} onClick={heandleToolBox} className="focus:outline-none">
           <img
             src="/compass.svg"
             alt="Compass Icon"
