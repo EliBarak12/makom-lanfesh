@@ -4,7 +4,9 @@ import { dataHebrew } from "../text/Hebrew.jsx";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
-
+const NAFSHI_SITE_URL = 'https://www.nafshi.info';
+const OTEF_OREF_URL = 'https://www.otef-oref.co.il';
+const FILL_FORM_URL = 'https://form.jotform.com/232812662439358';
 const AnswerUsual = () => {
   return (
     <div>
@@ -26,30 +28,26 @@ const AnswerUsual = () => {
                   {dataHebrew.findProCare.portalsTitle}
                 </p>
                 <div className="w-full flex justify-center mt-2">
-                  <button className="w-1/2  py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                  <a href={NAFSHI_SITE_URL} className="w-1/2  py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                     {dataHebrew.findProCare.nafshiButton}
-                  </button>
+                  </a>
                 </div>
 
                 <div className="w-full flex justify-center mt-2">
-                  <button className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                  <a href={OTEF_OREF_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                     {dataHebrew.findProCare.otefOrefButton}
-                  </button>
+                  </a>
                 </div>
 
                 <p className=" text-xl mt-2 w-1/2 flex items-center">
                   {dataHebrew.findProCare.healthFundsTitle}
                 </p>
-                <div className="w-full flex justify-center mt-2">
-                  <button className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
-                    {dataHebrew.crisisResources.macabiButton}
-                  </button>
-                </div>
+               
 
                 <div className="w-full flex justify-center mt-2">
-                  <button className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                  <a href={FILL_FORM_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                     {dataHebrew.findProCare.fillFormButton}
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
