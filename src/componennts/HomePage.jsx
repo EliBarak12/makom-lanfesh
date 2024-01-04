@@ -1,34 +1,29 @@
 import React from "react";
-import {useEffect } from "react";
+import { useEffect } from "react";
 import { dataHebrew } from "../text/Hebrew.jsx";
 import Support from "./Support.jsx";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
+  useEffect(() => {
+    const entry = localStorage.getItem("entry");
 
-useEffect(()=>{
-    const entry = localStorage.getItem("entry")
-
-    if (!entry){
-        navigate("/entry")
-
+    if (!entry) {
+      navigate("/entry");
     }
-
-},[])
-    
+  }, []);
 
   return (
-    <div  className="flex flex-col min-h-screen">
-    
-<Header header={dataHebrew.getSupport.header}/>
+    <div className="flex flex-col min-h-screen">
+      <Header header={dataHebrew.getSupport.header} />
       <main dir="rtl" className="flex-1 flex justify-center items-center">
         <div className="container mx-auto py-2 text-center">
           <section>
             {/* ... */}
-            <div className="fixed flex top-24 right-56 justify-center w-full md:w-2/3 mx-auto">
+            <div className=" relative flex  items-center justify-center mt-24 md:mt-12  ">
               {/* Replace 'your-image.jpg' with the path to your image */}
               <img
                 src="/kfarLogo.png"
@@ -36,14 +31,13 @@ useEffect(()=>{
                 className="w-1/2 rounded-lg shadow-md"
               />
             </div>
-            <div className="mt-40">
-            <Support />
-            </div >
+            <div className="">
+              <Support />
+            </div>
           </section>
         </div>
       </main>
-<Footer/>
-     
+      <Footer />
     </div>
   );
 };

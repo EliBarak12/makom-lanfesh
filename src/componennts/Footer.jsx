@@ -6,7 +6,7 @@ const Footer = () => {
       };
   return (
     <footer style={headerFooterStyle}>
-    <div className="container mx-auto text-center">
+    <div className="container mx-auto text-center py-2  ">
       {/* Add footer content or links */}
       <p>
         &copy; {new Date().getFullYear()} Your Website. All Rights Reserved.

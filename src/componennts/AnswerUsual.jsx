@@ -13,7 +13,7 @@ const AnswerUsual = () => {
       <main dir="rtl" className="flex-1 flex justify-center items-center">
         <div className="container mx-auto py-2 text-center">
           <section>
-            <div className="flex justify-center w-full md:w-2/3 mx-auto">
+            <div className="flex justify-center w-full md:w-2/3 mx-auto mt-32 md:mt-12">
               <img
                 src="/kfarLogo.png"
                 alt="Your Image"

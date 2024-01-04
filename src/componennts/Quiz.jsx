@@ -67,7 +67,7 @@ const Quiz = () => {
         <div className="container mx-auto py-2 text-center">
           <section>
             {/* ... */}
-            <div className="flex justify-center  w-full md:w-2/3 mx-auto">
+            <div className="flex justify-center  w-full md:w-2/3 mx-auto mt-36 md:mt-12">
               {/* Replace 'your-image.jpg' with the path to your image */}
               <img
                 src="/kfarLogo.png"

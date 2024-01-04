@@ -34,9 +34,9 @@ const Header = ({ header }) => {
       <div className="container mx-auto relative z-10 flex flex-col justify-center mb-2 items-center h-full">
         <h1 className="text-2xl font-bold text-center">{header}</h1>
 
-        <div className=" absolute top-0 left-1 z-50">
+        <div className=" absolute top-0 left-1 z-50  bg-blue-200  rounded-lg shadow-md mt-4">
           <div
-            className=" rounded-lg shadow-md p-6 cursor-pointer w-50 transition-all duration-300 ease-in-out hover:shadow-lg flex"
+            className=" rounded-lg shadow-md p-6  cursor-pointer w-50 transition-all duration-300 ease-in-out hover:shadow-lg flex"
             onClick={hendelOpenNav}
           >
             <svg
@@ -44,11 +44,13 @@ const Header = ({ header }) => {
               fill="currentColor"
               height="1em"
               width="1em"
-              color="white"
+              color="black"
             >
               <path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z" />
             </svg>
+            <div className=" ">
             {openNav && <Support />}
+            </div>
           </div>
         </div>
       </div>

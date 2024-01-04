@@ -10,7 +10,7 @@ const EmergencyResponse = () => {
         <div>
             <Header header={dataHebrew.getSupport.crisisButton}/>
 
-            <main dir="rtl" className="flex-1 flex justify-center items-center">
+            <main dir="rtl" className="flex-1 flex justify-center items-center  mt-32 md:mt-12">
                 <div className="container mx-auto py-2 text-center">
                     <section>
                         <div className="flex justify-center w-full md:w-2/3 mx-auto">
@@ -26,13 +26,14 @@ const EmergencyResponse = () => {
                                 <button className="w-1/2  py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">{dataHebrew.crisisResources.eranButton}</button>
                             </div>
 
-                            <p className=" text-xl nt-2">{dataHebrew.crisisResources.suicideAndCrisisTitle}</p>
+                            <p className=" text-xl mt-2">{dataHebrew.crisisResources.suicideAndCrisisTitle}</p>
                             <div className="w-full flex justify-center mt-2">
                                 <button className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">{dataHebrew.crisisResources.ntlButton}</button>
                             </div>
 
                             <div className="w-full flex justify-center mt-2">
-                                <button className=" w-1/2 py-2 px-40 bg-blue-200 text-black  rounded-lg shadow-md hover:bg-blue-400">{dataHebrew.crisisResources.hamalLevEhadButton}</button>
+                                
+                                <button className=" w-1/2 py-2 px-4 bg-blue-200 text-black  rounded-lg shadow-md hover:bg-blue-400">{dataHebrew.crisisResources.hamalLevEhadButton}</button>
                             </div>
 
                             <p className=" text-xl mt-2">{dataHebrew.crisisResources.emergencyCentersTitle}</p>

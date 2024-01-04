@@ -28,7 +28,11 @@ const Support = () => {
     justifyContent: "center",
     padding: "18px", // Adjust as needed
     margin: "14px", // Adjust as needed
-   
+    transition: "background-color 0.3s ease", // Smooth transition for hover effect
+    ':hover': {
+      backgroundColor: "#AAAAAA", // Change background color on hover
+      cursor: "pointer", // Change cursor on hover
+    },
   };
 
   const buttonTextStyle = {
@@ -54,7 +58,7 @@ const Support = () => {
   }
   return (
     <div dir="rtl">
-    <ul className="flex flex-col items-center justify-center mt-4">
+    <ul className="flex flex-col items-center justify-center  mt-4">
       <li className=" ">
         <button style={buttonStyle} onClick={heandleAnswer} className="focus:outline-none">
           <img
