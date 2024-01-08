@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { dataHebrew } from "../text/Hebrew.jsx";
+import { useMutation } from "react-query";
+
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Results from "./Results.jsx";
+import axios from "axios";
 const Quiz = () => {
   const [answers, setAnswers] = useState({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [results, setResults] = useState(false);
   const [sum, setSum] = useState(0);
+  const[send,setSendData] = useState(true)
+
+
 
   const handleSelection = (questionNumber, answerValue) => {
     setSum(sum + Number(answerValue));
@@ -15,9 +21,21 @@ const Quiz = () => {
       ...answers,
       [questionNumber]: answerValue,
     });
-    // Move to the next question after selecting the answer
     setCurrentQuestion(currentQuestion + 1);
   };
+
+
+  const sendQuizAnswers = async (data) => {
+    const response = await axios.post("https://makom-lanfesh-server.vercel.app/quiz", data);
+  
+  };
+
+  const { mutate: sendQuizData } = useMutation(sendQuizAnswers);
+  useEffect(() => {
+    if (results) {
+      sendQuizData({ quizAnswer: { answers: answers, grade: sum } });
+    }
+  }, [results]); 
 
   const renderQuestions = () => {
     const questionKeys = Object.keys(dataHebrew.questionnaire.question);
@@ -51,6 +69,9 @@ const Quiz = () => {
       );
     } else {
       setResults(true);
+         
+      
+     
       return (
         <div>
           <p>All questions answered.</p>

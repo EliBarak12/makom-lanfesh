@@ -1,20 +1,34 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { dataHebrew } from "../text/Hebrew.jsx";
 import Support from "./Support.jsx";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer.jsx";
+import axios from "axios";
 const Entry = () => {
   const [accept, setAccept] = useState(true);
   const [entry, setEntry] = useState(false);
 
-  const navigateQuiz = useNavigate()
+  const navigateQuiz = useNavigate();
 
   const heandlEntry = () => {
-    localStorage.setItem("entry",true)
+    localStorage.setItem("entry", true);
 
-    navigateQuiz('/quiz')
+    navigateQuiz("/quiz");
   };
+
+  useEffect(() => {
+    const sendUserEntry = async () => {
+      try {
+        const response = await axios.post("https://makom-lanfesh-server.vercel.app/userEntry");
+        console.log("Request sent successfully");
+      } catch (error) {
+        console.error("Error sending request:", error);
+      }
+    };
+
+    sendUserEntry();
+  }, []);
   return (
     <div className="flex flex-col min-h-screen">
       <header className="relative text-white py-8">
@@ -85,20 +99,18 @@ const Entry = () => {
             )}
             {entry && (
               <div className="flex flex-col justify-center items-center">
-            
-                  <h3 className="text-black text-xl mt-4">
-                    {dataHebrew.tutorial[1].header}
-                  </h3>
-               
+                <h3 className="text-black text-xl mt-4">
+                  {dataHebrew.tutorial[1].header}
+                </h3>
+
                 <div>
                   <p className="text-black text-lg mt-4">
                     {dataHebrew.tutorial[1].text}
                   </p>
-                  
                 </div>
                 <div className="py-6">
                   <img src="/door.svg" alt="" />
-                  </div>
+                </div>
                 <h3 className="text-black text-xl mt-4">
                   {dataHebrew.tutorial[2].header}
                 </h3>
@@ -107,7 +119,7 @@ const Entry = () => {
                 </div>
                 <div className="mb-16 py-6">
                   <img src="/safety.svg" alt="" />
-                  </div>
+                </div>
                 <div className="w-full flex justify-center mt-2">
                   <button
                     onClick={heandlEntry}
@@ -115,9 +127,8 @@ const Entry = () => {
                   >
                     {dataHebrew.tutorial.continue}
                   </button>
+                </div>
               </div>
-              </div>
-              
             )}
           </section>
         </div>

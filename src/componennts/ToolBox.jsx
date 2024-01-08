@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { dataHebrew } from "../text/Hebrew.jsx";
-import { useNavigate } from "react-router-dom";
 
+import { useMutation } from 'react-query';
+import axios from 'axios';
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 
@@ -14,6 +15,22 @@ const CHAT_BOT_ENGLISH_SITE_URL = 'https://t.me/friend_first_aid_bot';
 
 const ToolBox = () => {
 
+
+
+  const sendLinkNameToServer = useMutation(async (linkName) => {
+   
+    await axios.post('https://makom-lanfesh-server.vercel.app/links', { linkName :linkName});
+  });
+
+  const handleLinkClick = async (linkName) => {
+    try {
+      await sendLinkNameToServer.mutateAsync(linkName);
+
+    } catch (error) {
+      console.error("Error occurred:", error);
+
+    }
+  };
 
       return (
         <div>
@@ -41,7 +58,7 @@ const ToolBox = () => {
                       {dataHebrew.toolbox.relaxMuscleText}
                     </p>
                     <div className="w-full flex justify-center mt-2">
-                      <a href={RELAX_MUSCLE_SITE_URL} className="w-1/2  py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                      <a  onClick={() => handleLinkClick('Relax Muscle')} href={RELAX_MUSCLE_SITE_URL} className="w-1/2  py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                         {dataHebrew.toolbox.relaxMuscleButton}
                       </a>
                     </div>
@@ -53,7 +70,7 @@ const ToolBox = () => {
                     </p>
     
                     <div className="w-full flex justify-center mt-2">
-                      <a href={RELAX_BODY_SITE_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                      <a  onClick={() => handleLinkClick('Relax Body')} href={RELAX_BODY_SITE_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                         {dataHebrew.toolbox.relaxBodyButton}
                       </a>
                     </div>
@@ -65,7 +82,7 @@ const ToolBox = () => {
                       {dataHebrew.toolbox.botText}
                     </p>
                     <div className="w-full flex justify-center mt-2">
-                      <a href={CHAT_BOT_HEBREW_SITE_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                      <a  onClick={() => handleLinkClick('CHAT BOT')} href={CHAT_BOT_HEBREW_SITE_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                         {dataHebrew.toolbox.botButton}
                       </a>
                     </div>
