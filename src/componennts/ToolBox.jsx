@@ -5,6 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
+
+
+const RELAX_MUSCLE_SITE_URL = 'https://www.youtube.com/watch?v=z2ZY1VEveU4';
+const RELAX_BODY_SITE_URL = 'https://www.youtube.com/watch?v=vv2BourVYUM';
+const CHAT_BOT_HEBREW_SITE_URL = 'https://wa.link/oh70id';
+const CHAT_BOT_ENGLISH_SITE_URL = 'https://t.me/friend_first_aid_bot';
+
 const ToolBox = () => {
 
 
@@ -34,9 +41,9 @@ const ToolBox = () => {
                       {dataHebrew.toolbox.relaxMuscleText}
                     </p>
                     <div className="w-full flex justify-center mt-2">
-                      <button className="w-1/2  py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                      <a href={RELAX_MUSCLE_SITE_URL} className="w-1/2  py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                         {dataHebrew.toolbox.relaxMuscleButton}
-                      </button>
+                      </a>
                     </div>
                     <p className=" text-xl font-semibold w-1/2">
                       {dataHebrew.toolbox.relaxBodyTitle}
@@ -46,9 +53,9 @@ const ToolBox = () => {
                     </p>
     
                     <div className="w-full flex justify-center mt-2">
-                      <button className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                      <a href={RELAX_BODY_SITE_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                         {dataHebrew.toolbox.relaxBodyButton}
-                      </button>
+                      </a>
                     </div>
     
                     <p className=" text-xl mt-2 w-1/2 flex items-center">
@@ -58,9 +65,9 @@ const ToolBox = () => {
                       {dataHebrew.toolbox.botText}
                     </p>
                     <div className="w-full flex justify-center mt-2">
-                      <button className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
+                      <a href={CHAT_BOT_HEBREW_SITE_URL} className="w-1/2 py-2 px-4 bg-blue-200 text-black rounded-lg shadow-md hover:bg-blue-400">
                         {dataHebrew.toolbox.botButton}
-                      </button>
+                      </a>
                     </div>
     
                     
